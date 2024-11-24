@@ -1,16 +1,14 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.IO;
+﻿
 using Tyuiu.SosninFM.Sprint5.Task0.V4.Lib;
-
+using System.IO;
 
 namespace Tyuiu.SosninFM.Sprint5.Task0.V4.Test
 {
 	[TestClass]
-	public class DataServiceTest
+	public sealed class DataServiceTest
 	{
 		[TestMethod]
-		public void CheckExistsFile()
+		public void TestMethod1()
 		{
 			string path = @"D:\Programs\VisualStudio\Projects\repos\2024\Tyuiu.SosninFM.Sprint5\Tyuiu.SosninFM.Sprint5.Task0.V4\bin\Debug\OutPutFileTask0.txt";
 
