@@ -10,7 +10,7 @@ namespace Tyuiu.SosninFM.Sprint5.Task0.V4.Test
 		[TestMethod]
 		public void TestMethod1()
 		{
-			string path = @"D:\Programs\VisualStudio\Projects\repos\2024\Tyuiu.SosninFM.Sprint5\Tyuiu.SosninFM.Sprint5.Task0.V4\bin\Debug\OutPutFileTask0.txt";
+			string path = @"C:\Users\sosni\AppData\Local\Temp\OutPutFileTask0.txt";
 
 			FileInfo fileInfo = new FileInfo(path);
 			bool fileExists = fileInfo.Exists;
