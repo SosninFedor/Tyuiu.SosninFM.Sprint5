@@ -12,6 +12,7 @@ namespace Tyuiu.SosninFM.Sprint5.Task3.V7.Test
 			string path = @"C:\Users\sosni\AppData\Local\Temp\OutPutFileTask2.bin";
 
 			FileInfo fileInfo = new FileInfo(path);
+
 			bool fileExists = fileInfo.Exists;
 			bool wait = false;
 
