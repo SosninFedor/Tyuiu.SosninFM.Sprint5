@@ -9,7 +9,7 @@ namespace Tyuiu.SosninFM.Sprint5.Task3.V7.Test
 		[TestMethod]
 		public void CheckExistsFile()
 		{
-			string path = @"C:\Users\sosni\AppData\Local\Temp\OutPutFileTask2.bin";
+			string path = @"C:\Users\sosni\AppData\Local\Temp\OutPutFileTask3.bin";
 
 			FileInfo fileInfo = new FileInfo(path);
 
