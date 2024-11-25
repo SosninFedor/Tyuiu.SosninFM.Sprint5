@@ -1,8 +1,7 @@
 ﻿
-using Tyuiu.SosninFM.Sprint5.Task0.V4.Lib;
-using System.IO;
+using Tyuiu.SosninFM.Sprint5.Task1.V20.Lib;
 
-namespace Tyuiu.SosninFM.Sprint5.Task0.V4.Test
+namespace Tyuiu.SosninFM.Sprint5.Task1.V20.Test
 {
 	[TestClass]
 	public sealed class DataServiceTest
@@ -14,10 +13,9 @@ namespace Tyuiu.SosninFM.Sprint5.Task0.V4.Test
 
 			FileInfo fileInfo = new FileInfo(path);
 			bool fileExists = fileInfo.Exists;
-			bool wait = false;
+			bool wait = true;
 
 			Assert.AreEqual(wait, fileExists);
-
 		}
 	}
 }
