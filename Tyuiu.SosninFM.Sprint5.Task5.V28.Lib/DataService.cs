@@ -42,7 +42,7 @@ namespace Tyuiu.SosninFM.Sprint5.Task5.V28.Lib
 					}
 				}
 			}
-			return res;
+			return fact;
 		}
 	}
 }
