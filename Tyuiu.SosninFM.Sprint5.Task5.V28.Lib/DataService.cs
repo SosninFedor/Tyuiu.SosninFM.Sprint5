@@ -9,28 +9,32 @@ namespace Tyuiu.SosninFM.Sprint5.Task5.V28.Lib
 	{
 		public double LoadFromDataFile(string path)
 		{
-			double result = 1;
-			double minNum = 0;
+			double ans = double.MinValue;
+
 			using (StreamReader reader = new StreamReader(path))
 			{
-				string line;
-				List<double> minArray = new List<double>();
-				while ((line = reader.ReadLine()) != null)
+				double result = 1;
+				double minNum = 0;
+				using (StreamReader reader = new StreamReader(path))
 				{
-
-					if (Convert.ToDouble(line) > 0 && Convert.ToDouble(line) % 5 == 0)
+					string line;
+					List<double> minArray = new List<double>();
+					while ((line = reader.ReadLine()) != null)
 					{
-						minArray.Add(Convert.ToDouble(line));
+
+						if (Convert.ToDouble(line) > 0 && Convert.ToDouble(line) % 5 == 0)
+						{
+							minArray.Add(Convert.ToDouble(line));
+						}
+					}
+					minNum = minArray.Min();
+					for (int i = 1; i <= minNum; i++)
+					{
+						result *= i;
 					}
 				}
-				minNum = minArray.Min();
-				for (int i = 1; i <= minNum; i++)
-				{
-					result *= i;
-				}
+				return result;
 			}
-			return result;
-
 		}
 	}
 }
