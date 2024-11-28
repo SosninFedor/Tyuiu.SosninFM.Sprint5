@@ -33,16 +33,16 @@ namespace Tyuiu.SosninFM.Sprint5.Task5.V28.Lib
 							while (res < min)
 							{
 								min = (int)res;
-							}
-							for (int i = 1; i <= min; i++)
-							{
-								fact *= i;
+								for (int i = 1; i <= min; i++)
+								{
+									fact *= i;
+								}
 							}
 						}
 					}
 				}
 			}
-			return min;
+			return fact;
 		}
 	}
 }
