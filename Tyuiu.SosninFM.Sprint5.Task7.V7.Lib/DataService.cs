@@ -18,7 +18,6 @@ namespace Tyuiu.SosninFM.Sprint5.Task7.V7.Lib
 				File.Delete(path2);
 			}
 
-			string result = "";
 			using (StreamReader reader = new StreamReader(path))
 			{
 				string inputText = reader.ReadToEnd();

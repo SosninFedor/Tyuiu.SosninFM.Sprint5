@@ -1,4 +1,8 @@
-﻿namespace Tyuiu.SosninFM.Sprint5.Task7.V7.Test
+﻿
+using Tyuiu.SosninFM.Sprint5.Task7.V7.Lib;
+using System.IO;
+
+namespace Tyuiu.SosninFM.Sprint5.Task7.V7.Test
 {
 	[TestClass]
 	public sealed class DataService

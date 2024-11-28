@@ -8,8 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="DataServiceTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
     <PackageReference Include="MSTest" Version="3.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tyuiu.SosninFM.Sprint5.Task7.V7.Lib\Tyuiu.SosninFM.Sprint5.Task7.V7.Lib.csproj" />
   </ItemGroup>
 
   <ItemGroup>
