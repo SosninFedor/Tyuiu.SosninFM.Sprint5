@@ -20,6 +20,8 @@ namespace Tyuiu.SosninFM.Sprint5.Task5.V28.Lib
 
 				while ((line = reader.ReadLine()) != null)
 				{
+
+					double res = 1;
 					string[] arr = line.Split(' ');
 					foreach (string value2 in arr)
 					{
@@ -35,30 +37,26 @@ namespace Tyuiu.SosninFM.Sprint5.Task5.V28.Lib
 						{
 							continue;
 						}
-						int value = Convert.ToInt32(value2);
-						if (value == 2)
-						{
-							ans = Math.Max(ans, value);
-							continue;
-						}
+						
+						double min = int.MaxValue;
 
-						if (value > ans)
-						{
-							bool temp = true;
-							for (int i = 2; i < Math.Pow(value, 0.5) + 1; i++)
+						double number = double.Parse(line);
+						if (number > 0 && number % 5 == 0 && number < min)
 							{
-								if (value % i == 0)
-								{
-									temp = false;
-									break;
-								}
+								min = number;
 							}
-							if (temp) ans = value;
-						}
+
+
+							for (int i = 2; i <= number; i++)
+							{
+								res *= i;
+							}
+						
 					}
+					return res;
 				}
+
 			}
-			return Math.Round(ans, 3);
 		}
 	}
 }
