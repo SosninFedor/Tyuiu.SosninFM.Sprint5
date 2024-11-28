@@ -14,8 +14,8 @@ namespace Tyuiu.SosninFM.Sprint5.Task7.V7
 			Console.WriteLine("***************************************************************************");
 
 
-			string path = @"C:\DataSprint5\InPutDataFileTask6V13.txt";
-			string pathSaveFile = Path.Combine(new string[] { Path.GetTempPath(), "OutPutDataFileTask7V4.txt" });
+			string path = @"C:\DataSprint5\InPutDataFileTask7V7.txt";
+			string pathSaveFile = Path.Combine(new string[] { Path.GetTempPath(), "OutPutDataFileTask7V7.txt" });
 			Console.WriteLine("Данные находятся в файле: " + path);
 
 			Console.WriteLine("***************************************************************************");
