@@ -10,32 +10,27 @@ namespace Tyuiu.SosninFM.Sprint5.Task5.V28.Lib
 	{
 		public double LoadFromDataFile(string path)
 		{
-			double ans = double.MinValue;
-
-			double result = 1;
-			double minNum = 0;
+			double factorial = 1;
+			double s = double.MaxValue;
 
 			using (StreamReader reader = new StreamReader(path))
 			{
+				string line;
+				while ((line = reader.ReadLine()) != null)
 				{
-					string line;
-					List<double> minArray = new List<double>();
-					while ((line = reader.ReadLine()) != null)
+					double number = Convert.ToDouble(line);
+					if (number > 0 && number % 5 == 0 && number < s)
 					{
-
-						if (Convert.ToDouble(line) > 0 && Convert.ToDouble(line) % 5 == 0)
+						s = number;
+						for (int i = 1; i <= s; i++)
 						{
-							minArray.Add(Convert.ToDouble(line));
+							factorial *= i;
 						}
 					}
-					minNum = minArray.Min();
-					for (int i = 1; i <= minNum; i++)
-					{
-						result *= i;
-					}
 				}
-				return result;
 			}
+
+			return Math.Round(factorial, 3);
 		}
 	}
 }
