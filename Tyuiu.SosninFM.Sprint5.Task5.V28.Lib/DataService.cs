@@ -13,28 +13,50 @@ namespace Tyuiu.SosninFM.Sprint5.Task5.V28.Lib
 
 			using (StreamReader reader = new StreamReader(path))
 			{
-				double result = 1;
-				double minNum = 0;
-				using (StreamReader reader = new StreamReader(path))
-				{
-					string line;
-					List<double> minArray = new List<double>();
-					while ((line = reader.ReadLine()) != null)
-					{
+				string line;
 
-						if (Convert.ToDouble(line) > 0 && Convert.ToDouble(line) % 5 == 0)
+				while ((line = reader.ReadLine()) != null)
+				{
+					string[] arr = line.Split(' ');
+					foreach (string value2 in arr)
+					{
+						bool check = false;
+						foreach (char tempchar in value2)
 						{
-							minArray.Add(Convert.ToDouble(line));
+							if (tempchar == '.' || tempchar == ',')
+							{
+								check = true;
+							}
+						}
+						if (check)
+						{
+							continue;
+						}
+						int value = Convert.ToInt32(value2);
+						if (value == 2)
+						{
+							ans = Math.Max(ans, value);
+							continue;
+						}
+
+						if (value > ans)
+						{
+							bool temp = true;
+							for (int i = 2; i < Math.Pow(value, 0.5) + 1; i++)
+							{
+								if (value % i == 0)
+								{
+									temp = false;
+									break;
+								}
+							}
+							if (temp) ans = value;
 						}
 					}
-					minNum = minArray.Min();
-					for (int i = 1; i <= minNum; i++)
-					{
-						result *= i;
-					}
 				}
-				return result;
 			}
+			return Math.Round(ans, 3);
+		}
 		}
 	}
 }
