@@ -8,21 +8,17 @@ namespace Tyuiu.SosninFM.Sprint5.Task6.V13.Lib
 	{
 		public int LoadFromDataFile(string path)
 		{
-			int count = 0;
-
-			using (StreamReader reader = new StreamReader(path))
+			int cnt = 0;
+			string str = File.ReadAllText(path);
+			str = str.ToUpper().Replace("СС", "*");
+			for (int i = 0; i < str.Length; i++)
 			{
-				int cnt = 0;
-				string str = File.ReadAllText(path);
-				str = str.ToUpper().Replace("СС", "*");
-				for (int i = 0; i < str.Length; i++)
+				if (str[i] == '*')
 				{
-					if (str[i] == '*')
-					{
-						cnt += 1;
-					}
+					cnt += 1;
 				}
-				return cnt;
 			}
+			return cnt;
+		}
 	}
 }
