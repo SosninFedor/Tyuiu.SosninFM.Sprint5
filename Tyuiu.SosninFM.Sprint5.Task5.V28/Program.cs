@@ -12,7 +12,7 @@ namespace Tyuiu.SosninFM.Sprint5.Task5.V28
 			Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                                                 *");
 			Console.WriteLine("****************************************************************************************************");
 
-			string path = @"С:\DataSprint5\InPutDataFileTask4V8.txt";
+			string path = @"C:\DataSprint5\InPutDataFileTask5V28.txt";
 			Console.WriteLine("Данные находятся в файле: " + path);
 
 			Console.WriteLine("****************************************************************************************************");
