@@ -12,51 +12,37 @@ namespace Tyuiu.SosninFM.Sprint5.Task5.V28.Lib
 	{
 		public double LoadFromDataFile(string path)
 		{
-			double ans = double.MinValue;
-
+			int min = 1000;
+			double res = 0;
+			int fact = 1;
 			using (StreamReader reader = new StreamReader(path))
 			{
-				string line;
-
+				string? line;
 				while ((line = reader.ReadLine()) != null)
 				{
+					string lineReplace = line.Replace('.', ',');
+					string[] lineArray = lineReplace.Split(' ');
 
-					double res = 1;
-					string[] arr = line.Split(' ');
-					foreach (string value2 in arr)
+					foreach (string number in lineArray)
 					{
-						bool check = false;
-						foreach (char tempchar in value2)
+						double lineParse = double.Parse(number);
+
+						if ((lineParse > 0) && (lineParse % 5 == 0))
 						{
-							if (tempchar == '.' || tempchar == ',')
+							res = lineParse;
+							while (res < min)
 							{
-								check = true;
+								min = (int)res;
+							}
+							for (int i = 1; i <= min; i++)
+							{
+								fact *= i;
 							}
 						}
-						if (check)
-						{
-							continue;
-						}
-						
-						double min = int.MaxValue;
-
-						double number = double.Parse(line);
-						if (number > 0 && number % 5 == 0 && number < min)
-							{
-								min = number;
-							}
-
-
-							for (int i = 2; i <= number; i++)
-							{
-								res *= i;
-							}
-						
 					}
-					return res;
 				}
-
 			}
+			return fact;
 		}
 	}
 }
